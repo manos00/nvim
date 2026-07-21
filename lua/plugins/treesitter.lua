@@ -1,0 +1,23 @@
+return {}
+-- return {
+--     'nvim-treesitter/nvim-treesitter',
+--     branch = "main",
+--     lazy = false,
+--     build = ":TSUpdate",
+--
+--     opts = {
+-- 	    highlight = { enable = true },
+-- 	    indent = { enable = true },
+-- 	    -- autotage = { enable = true },
+-- 	    ensure_installed = {
+-- 	        "lua",
+-- 		"java",
+-- 		"python",
+-- 		"markdown",
+-- 		"bash",
+-- 		"qmljs",
+-- 		"qmldir"
+-- 	    },
+-- 	    auto_install = false,
+-- 	}
+-- }
