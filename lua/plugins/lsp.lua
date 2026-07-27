@@ -22,6 +22,17 @@ return {
             vim.lsp.enable('qmlls')
             vim.lsp.enable("jdtls")
             vim.lsp.enable("bashls")
+            vim.lsp.config("nil", {
+                cmd = { "nil" },
+                filetypes = { "nix" },
+                root_markers = { "flake.nix", ".git" },
+                settings = {
+                    formatting = {
+                        command = { "nixfmt" },
+                    },
+                },
+            })
+            vim.lsp.enable("nil")
             vim.lsp.config("lua_ls", {
                 filetypes = { 'lua' },
                 settings = {
