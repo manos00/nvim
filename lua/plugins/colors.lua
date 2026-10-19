@@ -4,19 +4,25 @@ end
 
 return {
     {
-	"folke/tokyonight.nvim",
-	config = function()
-	    vim.cmd.colorscheme "tokyonight"
-	    enable_transparency()
-	end
+        "neanias/everforest-nvim",
+        version = false,
+        lazy = false,
+        priority = 1000, -- make sure to load this before all the other start plugins
+        config = function()
+            require("everforest").setup({
+                background = "hard",
+                vim.cmd.colorscheme "everforest",
+                enable_transparency()
+            })
+        end,
     },
     {
-	"nvim-lualine/lualine.nvim",
-	dependencies = {
-	    "nvim-tree/nvim-web-devicons",
-	},
-	opts = {
-	    theme = 'tokyonight',
-	}
+        "nvim-lualine/lualine.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        opts = {
+            theme = 'everforest',
+        }
     }
 }

@@ -17,7 +17,8 @@ return {
         "neovim/nvim-lspconfig",
         config = function()
             vim.lsp.config("qmlls", {
-                cmd = { "qmlls6" }
+                cmd = { "qmlls" },
+                root_markers = { "qmldir", ".git" }
             })
             vim.lsp.enable('qmlls')
             vim.lsp.enable("jdtls")
