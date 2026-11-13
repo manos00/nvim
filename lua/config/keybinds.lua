@@ -1,8 +1,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.keymap.set("n", "<leader>cd", vim.cmd.Ex, { desc = 'Open netrw' })
+
+local map = function(mode, lhs, rhs, opts) vim.keymap.set(mode, lhs, rhs, opts) end
+
+map("n", "<leader>cd", vim.cmd.Ex, { desc = 'Open netrw' })
 -- tab navigation
-vim.keymap.set("n", "<leader><Tab>o", "<cmd>tabnew<CR>", { desc = 'Open new tab' })
-vim.keymap.set("n", "<leader><Tab>c", "<cmd>tabclose<CR>", { desc = 'Close current tab' })
-vim.keymap.set("n", "<leader><Tab>n", "<cmd>tabn<CR>", { desc = 'Move to next tab' })
-vim.keymap.set("n", "<leader><Tab>p", "<cmd>tabp<CR>", { desc = 'Move to previous tab' })
+map("n", "<leader><Tab>o", "<cmd>tabnew<CR>", { desc = 'Open new tab' })
+map("n", "<leader><Tab>c", "<cmd>tabclose<CR>", { desc = 'Close current tab' })
+map("n", "<leader><Tab>n", "<cmd>tabn<CR>", { desc = 'Move to next tab' })
+map("n", "<leader><Tab>p", "<cmd>tabp<CR>", { desc = 'Move to previous tab' })

@@ -1,5 +1,6 @@
 require('config.options')
 require('config.keybinds')
 require('config.autocommands')
-require('config.treesitter')
+-- require('config.treesitter')
+require('config.lsp')
 require('config.lazy')
