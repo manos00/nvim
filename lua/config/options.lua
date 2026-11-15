@@ -1,10 +1,28 @@
-vim.opt.number = true
-vim.opt.cursorline = true
-vim.opt.relativenumber = true
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.autoindent = true
-vim.opt.conceallevel = 2     -- Hide concealed text; see :h conceallevel
-vim.opt.concealcursor = "nc" -- Always conceal in normal and command modes
--- vim.treesitter.query.set("lua", "injections", "")
+local set = vim.opt
+
+-- line numbers
+set.number = true
+set.relativenumber = true
+
+-- search opts
+set.ignorecase = true
+set.smartcase = true
+
+-- cursor line
+set.cursorline = true
+
+-- indentation and tabs
+set.expandtab = true
+set.tabstop = 4
+set.shiftwidth = 4
+set.autoindent = true
+
+-- conceal
+set.conceallevel = 2     -- Hide concealed text; see :h conceallevel
+set.concealcursor = "nc" -- Always conceal in normal and command modes
+
+-- colors
+set.termguicolors = true
+
+-- keep cursor 8 rows from top/bottom
+set.scrolloff = 8
