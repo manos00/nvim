@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local map = function(mode, lhs, rhs, opts) vim.keymap.set(mode, lhs, rhs, opts) end
+local map = vim.keymap.set
 
 map("n", "<leader>cd", vim.cmd.Ex, { desc = 'Open netrw' })
 -- tab navigation
