@@ -29,10 +29,13 @@ vim.api.nvim_create_autocmd('TermOpen', {
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
-    group = vim.api.nvim_create_augroup('my.lsp', {}),
+    group = vim.api.nvim_create_augroup('my.lsp', { clear = true }),
     callback = function(args)
         local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
         local buf    = args.buf
+
+        require('config.lsp').on_attach(buf)
+
         -- local excluded_filetypes = {}
         if not client:supports_method('textDocument/willSaveWaitUntil')
             and client:supports_method('textDocument/formatting')
