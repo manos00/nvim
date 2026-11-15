@@ -69,12 +69,21 @@ M = {}
 
 function M.on_attach(bufnr)
     local opts = { buffer = bufnr, silent = true }
+    local map = vim.keymap.set
 
     -- KEYBINDS
-    vim.keymap.set("n", "<leader>em", vim.diagnostic.open_float,
+    map("n", "<leader>em", vim.diagnostic.open_float,
         vim.tbl_extend("force", opts, { desc = 'Open floating lsp message' }))
-    vim.keymap.set("n", "<leader>el", vim.diagnostic.setloclist,
+    map("n", "<leader>el", vim.diagnostic.setloclist,
         vim.tbl_extend("force", opts, { desc = 'Open lsp message list window' }))
+    map("n", "<leader>ld", function() vim.lsp.buf.definition({ reuse_win = true }) end,
+        vim.tbl_extend("force", opts, { desc = 'Go to definition' }))
+    map("n", "<leader>lf", vim.lsp.buf.references,
+        vim.tbl_extend("force", opts, { desc = 'Find references' }))
+    map("n", "<leader>lr", vim.lsp.buf.rename,
+        vim.tbl_extend("force", opts, { desc = 'Rename all references' }))
+    map("n", "<leader>lt", function() vim.lsp.buf.type_definition({ reuse_win = true }) end,
+        vim.tbl_extend("force", opts, { desc = 'Go to type definition' }))
 
     -- DIAGNOSTICS
     vim.diagnostic.config({
